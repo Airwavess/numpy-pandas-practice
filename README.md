@@ -19,16 +19,19 @@ array = np.array([[1,2,3],[4,5,6]])
 查詢 numpy array 的維度可以使用 `numpy.ndarray.ndim`:
 ```
 print('number of dimension:', array.ndim)
+# number of dimension: 2
 ```
 
 接下來，讓我來看看 numpy array 的形狀長怎樣:
 ```
 print('shape', array.shape)
+# shape (2, 3)
 ```
 
 或者是，想知道 numpy array 整體有多少元素，可以使用 `numpy.ndarray.size`
 ```
 print('size', array.size)
+# size 6
 ```
 ---
 
@@ -41,22 +44,36 @@ import numpy as np
 array = np.array([2,1,4])
 
 print(array.dtype)
+# int64
 ```
 
 如果想要設定 numpy array 的元素型態，可以直接在創建 array 時，設定 `numpy.ndarray.dtpye`:
 ```
 array_2 = np.array([3,4,5], dtype=np.float)
+print(array_2.dtype)
+# float64
+
 one_array = np.ones((3, 5), dtype=np.int)
+print(one_array.dtype)
+# int64
 ```
 
 建立 numpy array 有許多方便的方法，例如我們想要建立所有元素皆是 0 的 array 可以使用 `numpy.zeros(shape, dtype=float, order='C')`:
 ```
 zero_array = np.zeros((3, 4))
+print(zero_array)
+# [[ 0.  0.  0.  0.]
+#  [ 0.  0.  0.  0.]
+#  [ 0.  0.  0.  0.]]
 ```
 
 建立所有值皆為 1 的 array 則可以使用 `numpy.ones(shape, dtype=None, order='C')[source]`:
 ```
 one_array = np.ones((3, 5), dtype=np.int)
+print(one_array)
+# [[1 1 1 1 1]
+#  [1 1 1 1 1]
+#  [1 1 1 1 1]]
 ```
 
 或者是使用 `numpy.empty(shape, dtype=float, order='C')` 建立 array，而不設定裡面的元素，**但是，裡面的元素值會 random 產生**:
