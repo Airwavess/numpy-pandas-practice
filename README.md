@@ -9,14 +9,14 @@ NumPy參考 **CPython** ，而在這個Python實作直譯器上所寫的數學�
 ---
 
 ## [1. numpy 屬性](https://github.com/Airwavess/numpy-pandas-practice/blob/master/1.%20numpy%20attribute.ipynb)
-如果要使用 numpy 建立 array 可以使用 `nu.array()`:
+如果要使用 numpy 建立 array 可以使用 `numpy.array(object, dtype=None, copy=True, order='K', subok=False, ndmin=0)`:
 ```
 import numpy as np
 
 array = np.array([[1,2,3],[4,5,6]])
 ```
 
-查詢 numpy array 的維度可以使用 `[array-name].ndim`:
+查詢 numpy array 的維度可以使用 `numpy.ndarray.ndim`:
 ```
 print('number of dimension:', array.ndim)
 ```
@@ -26,7 +26,7 @@ print('number of dimension:', array.ndim)
 print('shape', array.shape)
 ```
 
-或者是，想知道 numpy array 整體有多少元素，可以使用 `[array-name].size`
+或者是，想知道 numpy array 整體有多少元素，可以使用 `numpy.ndarray.size`
 ```
 print('size', array.size)
 ```
@@ -34,7 +34,7 @@ print('size', array.size)
 
 ## [2. 建立 numpy array](https://github.com/Airwavess/numpy-pandas-practice/blob/master/2.%20Create%20array.ipynb)
 
-一般建立 numpy array 可以使用 `np.array()`，並可以利用 `[array-name].dtpye` 查詢 array 中的元素型態:
+一般建立 numpy array 可以使用 `numpy.array()`，並可以利用 `numpy.ndarray.dtpye` 查詢 array 中的元素型態:
 ```
 import numpy as np
 
@@ -43,23 +43,23 @@ array = np.array([2,1,4])
 print(array.dtype)
 ```
 
-如果想要設定 numpy array 的元素型態，可以直接在創建 array 時，設定 `dtype`:
+如果想要設定 numpy array 的元素型態，可以直接在創建 array 時，設定 `numpy.ndarray.dtpye`:
 ```
 array_2 = np.array([3,4,5], dtype=np.float)
 one_array = np.ones((3, 5), dtype=np.int)
 ```
 
-建立 numpy array 有許多方便的方法，例如我們想要建立所有元素皆是 0 的 array 可以使用 `np.zeros()`:
+建立 numpy array 有許多方便的方法，例如我們想要建立所有元素皆是 0 的 array 可以使用 `numpy.zeros(shape, dtype=float, order='C')`:
 ```
 zero_array = np.zeros((3, 4))
 ```
 
-建立所有值皆為 1 的 array 則可以使用 `np.ones()`:
+建立所有值皆為 1 的 array 則可以使用 `numpy.ones(shape, dtype=None, order='C')[source]`:
 ```
 one_array = np.ones((3, 5), dtype=np.int)
 ```
 
-或者是使用 `np.empty()` 建立 array，而不設定裡面的元素，**但是，裡面的元素值會 random 產生**:
+或者是使用 `numpy.empty(shape, dtype=float, order='C')` 建立 array，而不設定裡面的元素，**但是，裡面的元素值會 random 產生**:
 ```
 empty_array = np.empty((2, 1))
 # [[ 0.        ]
