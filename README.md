@@ -106,3 +106,68 @@ print(np.linspace(1, 10, 6).reshape(2, 3))
 # [[  1.    2.8   4.6]
 #  [  6.4   8.2  10. ]]
 ```
+
+## NumPy 基本運算
+
+我們先建立兩個 array:
+```
+import numpy as np
+
+a = np.array([3, 4, 100])
+b = np.arange(3)
+
+print('a:', a)
+# a: [  3   4 100]
+
+print('b:', b)
+# b: [0 1 2]
+```
+
+NumPy array 可以直接進行基本運算，包括 `+`、`-`、`*`、`/`、`%`、`**`：
+```
+print(a - b)
+# [ 3  3 98]
+
+print(a**2)
+# [    9    16 10000]
+```
+
+NumPy array 也可以進行邏輯運算:
+```
+print(b<2)
+# [ True  True False]
+
+print(b==2)
+# [False False  True]
+```
+
+當我們想將兩個 array 做矩陣的運算時，如果利用 `*` 作為運算子，而結果只是**將 index 對應的位置做相乘**：
+```
+c = np.array([[1,1],[0,1]])
+d = np.arange(4).reshape(2,2)
+
+print(c*d)
+# [[0 1]
+#  [0 3]]
+```
+
+如果想要運用**矩陣乘法**，則要使用 `numpy.dot(a, b, out=None)`:
+```
+print(np.dot(c, d))    # 矩陣乘法
+# [[2 4]
+#  [2 3]]
+```
+
+我們也可以運用一些函式直接對 numpy array 做運算：
+```
+random_array = np.random.random((2,4))     # 創建值 0 ~ 1 的陣列
+
+# axis可設定為 0 或 1，當 axis 的值為 0 時，以行為基準，反之，當 axis 的值為 1 時，以列為基礎
+print('sum:', np.sum(random_array, axis=1))    
+print('max:', np.min(random_array, axis=0))
+print('min:', np.max(random_array, axis=1))
+
+# sum: [ 2.23916874  1.50147807]
+# max: [ 0.49651734  0.1712239   0.15369895  0.51886555]
+# min: [ 0.93295404  0.65768968]
+```
