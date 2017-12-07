@@ -107,7 +107,7 @@ print(np.linspace(1, 10, 6).reshape(2, 3))
 #  [  6.4   8.2  10. ]]
 ```
 
-## [NumPy 基本運算](https://github.com/Airwavess/numpy-pandas-practice/blob/master/3.%20NumPy%20-%20%20fundamental%20operation%20.ipynb)
+## 3.[NumPy 基本運算](https://github.com/Airwavess/numpy-pandas-practice/blob/master/3.%20NumPy%20-%20%20fundamental%20operation%20.ipynb)
 
 我們先建立兩個 array:
 ```
@@ -132,7 +132,7 @@ print(a**2)
 # [    9    16 10000]
 ```
 
-NumPy array 也可以進行邏輯運算:
+NumPy array 也可以進行邏輯運算:
 ```
 print(b<2)
 # [ True  True False]
@@ -151,7 +151,7 @@ print(c*d)
 #  [0 3]]
 ```
 
-如果想要運用**矩陣乘法**，則要使用 `numpy.dot(a, b, out=None)`:
+如果想要運用**矩陣乘法**，則要使用 `numpy.dot(a, b, out=None)`:
 ```
 print(np.dot(c, d))    # 矩陣乘法
 # [[2 4]
