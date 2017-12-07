@@ -107,7 +107,7 @@ print(np.linspace(1, 10, 6).reshape(2, 3))
 #  [  6.4   8.2  10. ]]
 ```
 
-## NumPy 基本運算
+## [NumPy 基本運算](https://github.com/Airwavess/numpy-pandas-practice/blob/master/3.%20NumPy%20-%20%20fundamental%20operation%20.ipynb)
 
 我們先建立兩個 array:
 ```
